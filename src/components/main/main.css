@@ -1,0 +1,49 @@
+.main{
+    width: 200px;
+    margin: 0 auto; 
+}
+.conntent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 50px;
+}
+.btn1{
+   min-width: 220px;
+   height: 44px;
+   padding: 10px 18px;
+   border-radius: 5px;
+   border: 1px solid black;
+   background: white;
+   color: black;
+   font-weight: 600;
+}
+.btn2{
+
+        min-width: 220px;
+        height: 44px;
+        padding: 10px 18px;
+        border-radius: 5px;
+    
+        background: black;
+        color: white;
+        font-weight: 600;
+        border: 1px solid black;
+}
+.rotate {
+    animation: spin 0.5s linear;
+    border-radius: 5px;
+
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .conntent img{
+    width: 220px;
+    height: 220px;
+    border-radius:10px;
+  }
+  
