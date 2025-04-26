@@ -9,30 +9,39 @@ import pic4 from "../../assets/pic4.jpg";
 import pic5 from "../../assets/pic5.jpg";
 import pic6 from "../../assets/pic6.jpg";
 
+// Map dice numbers to images
+const diceImages = [null, pic1, pic2, pic3, pic4, pic5, pic6]; // Index 0 unused
+
 const Main = ({ diceNumber, rollDice, resetGame, setShowRules, rotate }) => {
-  // Dynamically select the correct image based on diceNumber
-  let diceImage;
-  if (diceNumber === 1) diceImage = pic1;
-  else if (diceNumber === 2) diceImage = pic2;
-  else if (diceNumber === 3) diceImage = pic3;
-  else if (diceNumber === 4) diceImage = pic4;
-  else if (diceNumber === 5) diceImage = pic5;
-  else if (diceNumber === 6) diceImage = pic6;
+  // Select image with fallback
+  const diceImage = diceImages[diceNumber] || pic1; // Fallback to pic1 if invalid
 
   return (
     <div className="main">
       <div className="content">
-        {/* Dice Image - Updates based on diceNumber & rotates on click */}
+        {/* Dice Image */}
         <img
-          src={diceImage} // Use the imported image
-          alt="Dice"
+          src={diceImage}
+          alt={`Dice showing ${diceNumber || "unknown"}`}
           onClick={rollDice}
           className={rotate ? "rotate" : ""}
         />
 
         {/* Buttons */}
-        <button className="btn1" onClick={resetGame}>Reset Score</button>
-        <button className="btn2" onClick={() => setShowRules(true)}>Show Rules</button>
+        <button
+          className="btn1"
+          onClick={resetGame}
+          aria-label="Reset game score"
+        >
+          Reset Score
+        </button>
+        <button
+          className="btn2"
+          onClick={() => setShowRules(true)}
+          aria-label="Show game rules"
+        >
+          Show Rules
+        </button>
       </div>
     </div>
   );

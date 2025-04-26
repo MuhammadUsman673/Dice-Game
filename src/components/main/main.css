@@ -1,153 +1,105 @@
-/* .main{
-    width: 200px;
-    margin: 0 auto; 
-}
-.conntent {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 50px;
-}
-.btn1{
-   min-width: 220px;
-   height: 44px;
-   padding: 10px 18px;
-   border-radius: 5px;
-   border: 1px solid black;
-   background: white;
-   color: black;
-   font-weight: 600;
-}
-.btn2{
-
-        min-width: 220px;
-        height: 44px;
-        padding: 10px 18px;
-        border-radius: 5px;
-    
-        background: black;
-        color: white;
-        font-weight: 600;
-        border: 1px solid black;
-}
-.rotate {
-    animation: spin 0.5s linear;
-    border-radius: 5px;
-
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  .conntent img{
-    width: 220px;
-    height: 220px;
-    border-radius:10px;
-  }
-   */
-
-
-   /* Main container */
+/* Main container */
 .main {
-  width: 200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 300px; /* Limit max width for larger screens */
+  margin: 0 auto; /* Center the container */
+  padding: 0 15px; /* Add padding for small screens */
 }
 
-/* Content container for dice image and buttons */
+/* Content section */
 .content {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 50px;
-  text-align: center;
+  align-items: center; /* Center items horizontally */
+  gap: 15px; /* Consistent spacing between elements */
+  margin-top: 20px; /* Reduced for better mobile fit */
 }
 
-/* Dice Image */
+/* Dice image styles */
 .content img {
-  width: 220px;
-  height: 220px;
+  width: 100%; /* Make image responsive */
+  max-width: 220px; /* Limit max size */
+  height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
-  transition: transform 0.3s ease-in-out;
+  margin-top: 50px; /* Space above image */
+  cursor: pointer; /* Indicate clickability */
+  display: block; /* Ensure proper centering */
 }
 
-/* Buttons */
-.btn1, .btn2 {
-  min-width: 220px;
+/* Button 1 - Reset Score */
+.btn1 {
+  width: 100%; /* Full width for consistency */
+  max-width: 220px; /* Match image width */
   height: 44px;
-  padding: 10px 18px;
   border-radius: 5px;
   border: 1px solid black;
+  background: white;
+  color: black;
   font-weight: 600;
+  cursor: pointer; /* Better UX */
+  transition: background 0.2s; /* Smooth hover effect */
   margin-right: 10px;
 }
 
-.btn1 {
-  background: white;
-  color: black;
+.btn1:hover {
+  background: #f0f0f0; /* Subtle hover effect */
 }
 
+/* Button 2 - Show Rules */
 .btn2 {
+  width: 100%; /* Full width for consistency */
+  max-width: 220px; /* Match image width */
+  height: 44px;
+  border-radius: 5px;
   background: black;
   color: white;
+  font-weight: 600;
+  border: 1px solid black;
+  cursor: pointer; /* Better UX */
+  transition: background 0.2s; /* Smooth hover effect */
+  margin-right: 10px;
 }
 
-/* Rotate animation for the dice image */
+.btn2:hover {
+  background: #333; /* Subtle hover effect */
+}
+
+/* Rotation animation */
 .rotate {
   animation: spin 0.5s linear;
-  border-radius: 5px;
 }
 
-/* Rotate keyframes */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  .main {
-    width: 100%;
-    padding: 20px;
-  }
-
+/* Responsive adjustments */
+@media (max-width: 400px) {
   .content img {
-    width: 150px;
-    height: 150px;
+    max-width: 180px; /* Smaller image on small screens */
+    margin-top: 30px; /* Reduce top margin */
   }
 
-  .btn1, .btn2 {
-    min-width: 180px;
-    height: 40px;
-  }
-
-  .content {
-    margin-top: 30px;
+  .btn1,
+  .btn2 {
+    max-width: 180px; /* Match image width */
+    height: 40px; /* Slightly smaller buttons */
+    font-size: 14px; /* Adjust font size */
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 600px) {
   .main {
-    width: 100%;
-    padding: 10px;
+    max-width: 400px; /* Larger container for bigger screens */
   }
 
   .content img {
-    width: 120px;
-    height: 120px;
+    max-width: 250px; /* Larger image */
   }
 
-  .btn1, .btn2 {
-    min-width: 150px;
-    height: 35px;
-  }
-
-  .content {
-    margin-top: 20px;
+  .btn1,
+  .btn2 {
+    max-width: 250px; /* Match image */
   }
 }
