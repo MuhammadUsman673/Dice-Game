@@ -1,4 +1,4 @@
-.container{
+/* .container{
     max-width: 1180px;
     display: flex;
     margin: 0 auto;
@@ -67,4 +67,110 @@ color: black;
         min-width: 160px;
         font-size: 12px;
     }
-}
+    .content img{
+        width: 100px;
+    }
+} */
+
+
+
+
+
+/* Main container */
+.container {
+    max-width: 1180px;
+    width: 100%; /* Ensures it doesn’t overflow */
+    display: flex;
+    margin: 0 auto;
+    height: 100vh;
+    align-items: center;
+    overflow-x: hidden; /* Important: remove horizontal scroll */
+  }
+  
+  /* Content styling */
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Button styling */
+  .content button {
+    color: white;
+    padding: 10px 18px;
+    background: black;
+    border-radius: 5px;
+    min-width: 120px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  
+  /* Button hover effect */
+  /* .content button:hover {
+    background-color: white;
+    color: black;
+  } */
+  
+  /* Heading styling */
+  .content h1 {
+    font-size: 96px;
+    white-space: nowrap;
+  }
+  
+  /* Responsive for large tablets and small laptops */
+  @media (max-width: 1024px) {
+    .container {
+      max-width: 90%;
+    }
+  
+    .content h1 {
+      font-size: 6vw;
+    }
+  
+    .content button {
+      min-width: 200px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Responsive for tablets */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+    }
+  
+    .content h1 {
+      font-size: 8vw;
+    }
+  
+    .content button {
+      min-width: 180px;
+      font-size: 14px;  
+    }
+  }
+  
+  /* Responsive for mobile screens */
+  @media (max-width: 480px) {
+    .content h1 {
+      font-size: 10vw;
+    }
+  
+    .content button {
+      min-width: 160px;
+      font-size: 12px;
+    }
+  
+    .content img {
+      width: 150px; /* Decrease the image size on mobile */
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  
