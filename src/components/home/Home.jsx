@@ -1,12 +1,12 @@
 import React from 'react';
 import './home.css';
+import diceImage from '../../assets/dices 1.png'; // TWO dots (../../)
 
 const Home = ({ toggle }) => {
   return (
     <div className="container">
       <div>
-      <img src="/dices1.png" alt="Dice Game" />
-
+        <img src={diceImage} alt="Dice Game" />
       </div>
       <div className="content">
         <h1>Dice Game</h1>
@@ -17,4 +17,3 @@ const Home = ({ toggle }) => {
 };
 
 export default Home;
-
